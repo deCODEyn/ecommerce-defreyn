@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type Stripe from 'stripe';
-import { Button } from '@/components//ui/button';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { ProductType } from '@/types/product-type';
 
@@ -15,10 +15,11 @@ export function ProductCard({ product }: ProductType) {
           <div className="relative h-80 w-full lg:h-120">
             <Image
               alt={product.name}
-              className="rounded-t-lg transition-opacity duration-300 group-hover:opacity-90"
-              layout="fill"
-              objectFit="cover"
+              className="rounded-t-lg transition-opacity duration-300 group-hover:opacity-75"
+              fill
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
               src={product.images[0]}
+              style={{ objectFit: 'cover' }}
             />
           </div>
         )}
@@ -29,16 +30,19 @@ export function ProductCard({ product }: ProductType) {
         </CardHeader>
         <CardContent className="flex flex-grow flex-col justify-between p-4">
           {product.description && (
-            <p className="mb-2 h-12 text-pink-200 text-sm">
+            <p className="mb-2 h-12 text-pink-300 text-sm">
               {product.description}
             </p>
           )}
           {price?.unit_amount && (
-            <p className="h-6 text-right font-bold text-lg text-teal-500">
+            <p className="h-6 text-right font-bold text-lg text-teal-500 ">
               R${(price.unit_amount / 100).toFixed(2)}
             </p>
           )}
-          <Button className="mt-4 bg-amber-950 text-teal-700 text-xl">
+          <Button
+            className="mt-4 bg-amber-700 text-black text-xl hover:bg-amber-600"
+            variant="default"
+          >
             Detalhes
           </Button>
         </CardContent>

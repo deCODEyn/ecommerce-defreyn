@@ -27,9 +27,11 @@ export function Carousel({ products }: ProductsListType) {
           <Image
             alt={currentProduct.name}
             className="transition-opacity duration-500 ease-in-out"
-            layout="fill"
-            objectFit="cover"
+            fill
+            priority
+            sizes="100vw"
             src={currentProduct.images[0]}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       )}

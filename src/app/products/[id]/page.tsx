@@ -1,15 +1,14 @@
-// biome-ignore-all lint/suspicious/noConsole: <dev test>
-
 import ProductDetail from '@/components/product-detail';
 import { getProductId } from '@/lib/http/get-product-id';
 
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
   const { id } = await params;
   const product = await getProductId(id);
+  const plainProduct = JSON.parse(JSON.stringify(product));
 
-  return <ProductDetail product={product} />;
+  return <ProductDetail product={plainProduct} />;
 }

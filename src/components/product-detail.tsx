@@ -1,10 +1,26 @@
+'use client';
+
 import Image from 'next/image';
 import type Stripe from 'stripe';
 import { Button } from '@/components/ui/button';
+import { useCartStore } from '@/store/cart-store';
 import type { ProductType } from '@/types/product-type';
 
 export default function ProductDetail({ product }: ProductType) {
+  const { items, addItem, removeItem } = useCartStore();
   const price = product.default_price as Stripe.Price;
+  const cartItem = items.find((item) => item.id === product.id);
+  const quantity = cartItem ? cartItem.quantity : 0;
+
+  function onAddItem() {
+    addItem({
+      id: product.id,
+      name: product.name,
+      price: price.unit_amount as number,
+      imageUrl: product.images ? product.images[0] : null,
+      quantity: 1,
+    });
+  }
 
   return (
     <div className="container mx-auto flex flex-col items-center gap-8 px-4 py-8 md:flex-row">
@@ -13,9 +29,10 @@ export default function ProductDetail({ product }: ProductType) {
           <Image
             alt={product.name}
             className="transition duration-300 hover:opacity-90"
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             src={product.images[0]}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       )}
@@ -32,13 +49,21 @@ export default function ProductDetail({ product }: ProductType) {
           </p>
         )}
         <div className="m-10 flex items-center space-x-4">
-          <Button className="size-9 text-teal-500 text-xl" variant="outline">
+          <Button
+            className="size-9 text-teal-500 text-xl"
+            onClick={() => removeItem(product.id)}
+            variant="outline"
+          >
             -
           </Button>
           <span className="font-semibold text-lg text-teal-500">
-            quantidade
+            {quantity}
           </span>
-          <Button className="size-9 text-teal-500 text-xl" variant="outline">
+          <Button
+            className="size-9 text-teal-500 text-xl"
+            onClick={onAddItem}
+            variant="outline"
+          >
             +
           </Button>
         </div>
