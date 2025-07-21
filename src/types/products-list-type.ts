@@ -1,5 +1,5 @@
 import type Stripe from 'stripe';
 
-export interface ProductsList {
+export type ProductsListType = {
   products: Stripe.Product[];
-}
+};

@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import type Stripe from 'stripe';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
-import type { ProductsList } from '@/types/products-list';
+import type { ProductsListType } from '@/types/products-list-type';
 
-export function Carousel({ products }: ProductsList) {
+export function Carousel({ products }: ProductsListType) {
   const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {

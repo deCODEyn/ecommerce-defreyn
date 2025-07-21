@@ -2,13 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel } from '@/components/carousel';
 import { Button } from '@/components/ui/button';
-import { stripe } from '@/lib/stripe';
+import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Home() {
-  const products = await stripe.products.list({
-    expand: ['data.default_price'],
-    limit: 5,
-  });
+  const products = await getProductsList(true, 5);
 
   return (
     <div>
