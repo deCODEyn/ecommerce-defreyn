@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Carousel } from '@/components/carousel';
 import { Button } from '@/components/ui/button';
 import { stripe } from '@/lib/stripe';
 
@@ -42,7 +43,9 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="py-8">Carrosel virá aqui</section>
+      <section className="py-8">
+        <Carousel products={products.data} />
+      </section>
     </div>
   );
 }
