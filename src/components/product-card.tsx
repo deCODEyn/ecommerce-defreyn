@@ -9,7 +9,7 @@ export function ProductCard({ product }: ProductType) {
   const price = product.default_price as Stripe.Price;
 
   return (
-    <Link className="block h-full" href="/products/1">
+    <Link className="block h-full" href={`/products/${product.id}`}>
       <Card className="group flex h-full flex-col gap-0 border-gray-300 bg-background py-0 transition duration-300 hover:shadow-2xl">
         {product.images?.[0] && (
           <div className="relative h-80 w-full lg:h-120">
@@ -34,7 +34,7 @@ export function ProductCard({ product }: ProductType) {
             </p>
           )}
           {price?.unit_amount && (
-            <p className="ont-semibold h-6 text-right font-bold text-lg text-teal-500">
+            <p className="h-6 text-right font-bold text-lg text-teal-500">
               R${(price.unit_amount / 100).toFixed(2)}
             </p>
           )}
