@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductType) {
             </p>
           )}
           <Button
-            className="mt-4 bg-amber-700 text-black text-xl hover:bg-amber-600"
+            className="mt-4 bg-amber-700 text-black text-xl hover:bg-amber-800"
             variant="default"
           >
             Detalhes

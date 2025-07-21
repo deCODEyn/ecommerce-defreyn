@@ -20,7 +20,7 @@ export default async function Home() {
             </p>
             <Button
               asChild
-              className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-fuchsia-200"
+              className="inline-flex items-center justify-center rounded-full bg-amber-700 px-6 py-3 text-fuchsia-200 hover:bg-amber-800"
               variant="default"
             >
               <Link
