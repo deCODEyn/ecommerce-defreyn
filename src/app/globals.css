@@ -94,8 +94,8 @@
   --popover-foreground: var(--color-nevoa-lunar)
   --primary: var(--color-dourado-estelar);
   --primary-foreground: var(--color-azul-galactico);
-  --secondary: var(--color-rosa-nebulosa);
-  --secondary-foreground: var(--color-azul-galactico);
+  --secondary: var(--color-cinza-nuvens);
+  --secondary-foreground: var(--color-dourado-estelar);
   --muted: rgba(230, 212, 206, 0.08);
   --muted-foreground: var(--color-nevoa-lunar);
   --accent: var(--color-dourado-estelar);

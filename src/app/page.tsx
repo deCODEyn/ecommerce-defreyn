@@ -37,7 +37,7 @@ export default async function Home() {
             </Button>
           </div>
           {bannerImageUrl && (
-            <div className="relative aspect-video w-full max-w-sm overflow-hidden rounded-lg md:max-w-md">
+            <div className="relative h-96 w-full max-w-sm overflow-hidden rounded-lg md:max-w-md lg:h-[450px]">
               <Image
                 alt="Imagem de destaque de um de nossos produtos exclusivos."
                 className="border-2 border-muted object-cover shadow-xl"

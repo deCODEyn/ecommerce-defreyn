@@ -9,5 +9,9 @@ export default async function ProductPage({
   const product = await getProductId(id);
   const plainProduct = JSON.parse(JSON.stringify(product));
 
-  return <ProductDetail product={plainProduct} />;
+  return (
+    <div className="bg-background text-foreground">
+      <ProductDetail product={plainProduct} />
+    </div>
+  );
 }

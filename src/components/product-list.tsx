@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ProductCard } from '@/components/product-card';
+import { Input } from '@/components/ui/input';
 import type { ProductsListType } from '@/types/products-list-type';
 
 export function ProductsList({ products }: ProductsListType) {
@@ -20,10 +21,11 @@ export function ProductsList({ products }: ProductsListType) {
   return (
     <div>
       <div className="mb-6 flex justify-center">
-        <input
-          className="w-full max-w-md rounded border border-teal-400 px-4 py-2 text-teal-500 focus:outline-none focus:ring-2 focus:ring-pink-300"
+        <Input
+          aria-label="Campo de pesquisa de produtos"
+          className="w-full max-w-md"
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Pesquisar produtos"
+          placeholder="Pesquisar produtos..."
           type="text"
           value={searchTerm}
         />
@@ -37,6 +39,11 @@ export function ProductsList({ products }: ProductsListType) {
           );
         })}
       </ul>
+      {filteredProduct.length === 0 && (
+        <p className="mt-8 text-center text-lg text-muted-foreground">
+          Nenhum produto encontrado para sua pesquisa.
+        </p>
+      )}
     </div>
   );
 }

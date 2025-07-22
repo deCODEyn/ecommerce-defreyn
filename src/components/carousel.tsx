@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import type Stripe from 'stripe';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
@@ -59,30 +60,36 @@ export function Carousel({ products }: ProductsListType) {
             const itemPrice = product.default_price as Stripe.Price;
             return (
               <CarouselItem key={product.id}>
-                <Card className="relative overflow-hidden rounded-lg border-border shadow-md">
-                  {product.images?.[0] && (
-                    <div className="relative h-120 w-full lg:h-180">
-                      <Image
-                        alt={product.name}
-                        className="object-cover transition-opacity duration-500 ease-in-out"
-                        fill
-                        sizes="100vw"
-                        src={product.images[0]}
-                        style={{ objectFit: 'cover' }}
-                      />
-                    </div>
-                  )}
-                  <CardContent className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-card-foreground">
-                    <CardTitle className="mb-2 font-bold text-3xl text-primary">
-                      {product.name}
-                    </CardTitle>
-                    {itemPrice?.unit_amount && (
-                      <p className="font-bold text-foreground text-xl">
-                        R${(itemPrice.unit_amount / 100).toFixed(2)}
-                      </p>
+                <Link
+                  aria-label={`Ver detalhes do produto ${product.name}`}
+                  className="block h-full w-full"
+                  href={`/products/${product.id}`}
+                >
+                  <Card className="relative overflow-hidden rounded-lg border-border shadow-md">
+                    {product.images?.[0] && (
+                      <div className="relative h-120 w-full lg:h-180">
+                        <Image
+                          alt={product.name}
+                          className="object-cover transition-opacity duration-500 ease-in-out"
+                          fill
+                          sizes="100vw"
+                          src={product.images[0]}
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
                     )}
-                  </CardContent>
-                </Card>
+                    <CardContent className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-card-foreground">
+                      <CardTitle className="mb-2 font-bold text-3xl text-primary">
+                        {product.name}
+                      </CardTitle>
+                      {itemPrice?.unit_amount && (
+                        <p className="font-bold text-foreground text-xl">
+                          R${(itemPrice.unit_amount / 100).toFixed(2)}
+                        </p>
+                      )}
+                    </CardContent>
+                  </Card>
+                </Link>
               </CarouselItem>
             );
           })}
