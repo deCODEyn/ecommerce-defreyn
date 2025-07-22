@@ -1,19 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { CarouselPagination } from '@/components/carousel/carousel-pagination';
 import {
+  Carousel,
   type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
+  CarouselPagination,
   CarouselPrevious,
-  Carousel as ShadcnCarousel,
-} from '@/components/ui/carousel';
-import type { ProductsListType } from '@/types/product/products-list-type';
-import { CarouselProductCard } from './carousel-product-card';
+  CarouselProductCard,
+} from '@/components';
+import type { ProductsListType } from '@/types';
 
-export function Carousel({ products }: ProductsListType) {
+export function CarouselApp({ products }: ProductsListType) {
   const [api, setApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [count, setCount] = useState(0);
@@ -46,7 +46,7 @@ export function Carousel({ products }: ProductsListType) {
 
   return (
     <div className="group relative">
-      <ShadcnCarousel className="w-full" opts={{ loop: true }} setApi={setApi}>
+      <Carousel className="w-full" opts={{ loop: true }} setApi={setApi}>
         <CarouselContent>
           {products.map((product) => {
             return (
@@ -58,7 +58,7 @@ export function Carousel({ products }: ProductsListType) {
         </CarouselContent>
         <CarouselPrevious className="-translate-y-1/2 absolute top-1/2 left-4 z-10 hidden size-10 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 shadow-md transition-opacity duration-300 group-hover:opacity-100 md:flex" />
         <CarouselNext className="-translate-y-1/2 absolute top-1/2 right-4 z-10 hidden size-10 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 shadow-md transition-opacity duration-300 group-hover:opacity-100 md:flex" />
-      </ShadcnCarousel>
+      </Carousel>
       <CarouselPagination api={api} count={count} currentSlide={currentSlide} />
     </div>
   );

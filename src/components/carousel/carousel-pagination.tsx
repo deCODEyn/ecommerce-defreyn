@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
-import type { CarouselPaginationProps } from '@/types/carousel/carousel-pagination-type';
+import type { CarouselPaginationType } from '@/types';
 
 export function CarouselPagination({
   api,
   count,
   currentSlide,
-}: CarouselPaginationProps) {
+}: CarouselPaginationType) {
   const scrollTo = useCallback(
     (index: number) => {
       if (api) {

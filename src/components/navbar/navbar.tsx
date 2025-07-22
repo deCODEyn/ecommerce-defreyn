@@ -2,10 +2,12 @@
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCallback, useEffect, useState } from 'react';
-import { NavbarLogo } from '@/components/navbar/navbar-logo';
-import { MobileMenu } from './mobile-menu';
-import { NavbarActions } from './navbar-action';
-import { NavbarDesktopLinks } from './navbar-desktop-links';
+import {
+  MobileMenu,
+  NavbarActions,
+  NavbarDesktopLinks,
+  NavbarLogo,
+} from '@/components';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);

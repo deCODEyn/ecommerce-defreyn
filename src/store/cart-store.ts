@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { CartStor } from '@/types/cart/cart-store-interface';
+import type { CartStorInterface } from '@/types';
 
-export const useCartStore = create<CartStor>()(
+export const useCartStore = create<CartStorInterface>()(
   persist(
     (set) => ({
       items: [],

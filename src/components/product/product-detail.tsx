@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import type Stripe from 'stripe';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { useCartStore } from '@/store/cart-store';
-import type { ProductType } from '@/types/product/product-type';
+import type { ProductType } from '@/types';
 
-export default function ProductDetail({ product }: ProductType) {
+export function ProductDetail({ product }: ProductType) {
   const { items, addItem, removeItem } = useCartStore();
   const price = product.default_price as Stripe.Price;
   const cartItem = items.find((item) => item.id === product.id);

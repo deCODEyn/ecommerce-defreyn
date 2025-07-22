@@ -6,16 +6,16 @@ import {
   SunIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components';
 import { useTheme } from '@/hooks/use-theme';
 import { useCartStore } from '@/store/cart-store';
-import type { NavbarActionProps } from '@/types/navbar/navbar-actions-type';
+import type { NavbarActionInterface } from '@/types';
 
 export function NavbarActions({
   onMobileMenuToggle,
   isMobileMenuOpen,
   MobileMenuIcon,
-}: NavbarActionProps) {
+}: NavbarActionInterface) {
   const { items } = useCartStore();
   const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 

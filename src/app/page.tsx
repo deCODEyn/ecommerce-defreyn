@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Carousel } from '@/components/carousel/carousel';
-import { Button } from '@/components/ui/button';
+import { Button, CarouselApp } from '@/components';
 import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Home() {
@@ -55,7 +54,7 @@ export default async function Home() {
         <h2 className="mb-8 text-center font-bold text-3xl text-primary">
           Produtos em Órbita
         </h2>
-        <Carousel products={products.data} />
+        <CarouselApp products={products.data} />
       </section>
 
       <section className="mx-4 mt-12 mb-8 max-w-7xl rounded-3xl bg-muted py-12 text-foreground shadow-inner md:mx-8 lg:mx-auto">

@@ -1,4 +1,4 @@
-import { ProductsList } from '@/components/product/product-list';
+import { ProductsList } from '@/components';
 import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Products() {

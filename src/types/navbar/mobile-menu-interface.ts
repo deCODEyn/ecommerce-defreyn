@@ -1,4 +1,4 @@
-export type MobileMenuProps = {
+export interface MobileMenuInterface {
   isOpen: boolean;
   onClose: () => void;
-};
+}

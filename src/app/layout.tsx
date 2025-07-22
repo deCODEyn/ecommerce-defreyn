@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import { Navbar } from '@/components/navbar/navbar';
+import { Navbar } from '@/components';
 
 export const metadata: Metadata = {
   title: 'E-Commerce Estelar | Sua Loja de Produtos Únicos',

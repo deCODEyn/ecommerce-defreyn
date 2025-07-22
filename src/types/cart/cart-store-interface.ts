@@ -1,8 +1,8 @@
-import type { CartItem } from '@/types/cart/cart-item-type';
+import type { CartItemType } from '@/types';
 
-export interface CartStor {
-  items: CartItem[];
-  addItem: (item: CartItem) => void;
+export interface CartStorInterface {
+  items: CartItemType[];
+  addItem: (item: CartItemType) => void;
   removeItem: (id: string) => void;
   clearCart: () => void;
 }

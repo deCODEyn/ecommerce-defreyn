@@ -1,4 +1,4 @@
-import ProductDetail from '@/components/product/product-detail';
+import { ProductDetail } from '@/components';
 import { getProductId } from '@/lib/http/get-product-id';
 export default async function ProductPage({
   params,

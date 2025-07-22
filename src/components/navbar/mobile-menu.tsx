@@ -3,10 +3,10 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useCallback, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import type { MobileMenuProps } from '@/types/navbar/mobile-menu-type';
+import { Button } from '@/components';
+import type { MobileMenuInterface } from '@/types';
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';

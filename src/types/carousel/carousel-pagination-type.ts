@@ -1,6 +1,6 @@
-import type { CarouselApi } from '@/components/ui/carousel';
+import type { CarouselApi } from '@/components';
 
-export type CarouselPaginationProps = {
+export type CarouselPaginationType = {
   api: CarouselApi | undefined;
   count: number;
   currentSlide: number;
