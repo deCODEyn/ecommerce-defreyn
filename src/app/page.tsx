@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button, CarouselApp } from '@/components';
+import { ButtonLink, CarouselApp } from '@/components';
 import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Home() {
@@ -21,19 +20,12 @@ export default async function Home() {
               Desvende os produtos mais recentes e mergulhe em ofertas
               estelares. Qualidade e inovação para sua jornada.
             </p>
-            <Button
-              asChild
-              className="inline-flex items-center justify-center rounded-full px-8 py-3 shadow-md transition-all duration-300 hover:scale-105"
+            <ButtonLink
+              ariaLabel="Explorar todo o catálogo de produtos"
+              href="/products"
+              label="Explorar Catálogo"
               variant="default"
-            >
-              <Link
-                aria-label="Explorar todo o catálogo de produtos"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3"
-                href="/products"
-              >
-                Explorar Catálogo
-              </Link>
-            </Button>
+            />
           </div>
           {bannerImageUrl && (
             <div className="relative h-96 w-full max-w-sm overflow-hidden rounded-lg md:max-w-md lg:h-[450px]">
@@ -66,15 +58,13 @@ export default async function Home() {
             Descubra a qualidade que transcende. Cada item, uma estrela em nossa
             coleção.
           </p>
-          <Button
-            asChild
-            className="mt-8 inline-flex items-center justify-center rounded-full px-8 py-3 shadow-md transition-all duration-300 hover:scale-105"
+          <ButtonLink
+            ariaLabel="Entre em contato conosco"
+            className="mt-8 text-background"
+            href="/contact"
+            label="Fale Conosco"
             variant="secondary"
-          >
-            <Link aria-label="Entre em contato conosco" href="/contact">
-              Fale Conosco
-            </Link>
-          </Button>
+          />
         </div>
       </section>
     </div>

@@ -1,9 +1,8 @@
 'use client';
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import { useCallback, useEffect } from 'react';
-import { Button } from '@/components';
+import { Button, NavbarLink } from '@/components';
 import type { MobileMenuInterface } from '@/types';
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
@@ -48,34 +47,21 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
         </div>
         <ul className="flex flex-col space-y-2 p-4">
           <li>
-            <Link
-              aria-label="Navegar para a página inicial"
-              className="block rounded px-4 py-2 text-foreground transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              href="/"
-              onClick={handleLinkClick}
-            >
-              Home
-            </Link>
+            <NavbarLink href="/" label="Home" onClick={handleLinkClick} />
           </li>
           <li>
-            <Link
-              aria-label="Navegar para a página de produtos"
-              className="block rounded px-4 py-2 text-foreground transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            <NavbarLink
               href="/products"
+              label="Produtos"
               onClick={handleLinkClick}
-            >
-              Produtos
-            </Link>
+            />
           </li>
           <li>
-            <Link
-              aria-label="Navegar para a página de finalização de compra"
-              className="block rounded px-4 py-2 text-foreground transition-colors hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            <NavbarLink
               href="/checkout"
+              label="Finalizar Compra"
               onClick={handleLinkClick}
-            >
-              Finalizar Compra
-            </Link>
+            />
           </li>
         </ul>
       </nav>
