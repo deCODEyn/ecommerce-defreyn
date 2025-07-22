@@ -3,8 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  A camada @theme inline aqui está usando variáveis que serão definidas abaixo.
+  Não precisamos alterá-la diretamente, apenas garantir que as variáveis
+  que ela referencia (como --color-background, --primary, etc.)
+  sejam definidas no :root.
+*/
 @theme inline {
-  --color-background: var(--nebulosaBg);
+  --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -44,7 +50,100 @@
 }
 
 :root {
-  --nebulosaBg: #1A2B3D;
+  /* Suas Cores de Marca */
+  --color-nevoa-lunar: #F8F8F5; /* Off White */
+  --color-dourado-estelar: #C6A664; /* Ouro fosco */
+  --color-azul-galactico: #1A2B3D; /* Azul petróleo escuro */
+  --color-cinza-nuvens: #D8D9D7; /* Cinza claro quente */
+  --color-rosa-nebulosa: #E6D4CE; /* Rosa queimado suave */
+
+  /* Mapeamento das variáveis de shadcn/ui para suas cores de marca (Tema CLARO) */
+  --radius: 0.625rem; /* Mantém o radius padrão do shadcn/ui ou ajuste se quiser */
+  --background: var(--color-nevoa-lunar); /* Fundo principal */
+  --foreground: var(--color-azul-galactico); /* Cor do texto principal (escuro) */
+  --card: var(--color-nevoa-lunar); /* Fundo dos cards */
+  --card-foreground: var(--color-azul-galactico); /* Texto nos cards */
+  --popover: var(--color-nevoa-lunar); /* Fundo de popovers */
+  --popover-foreground: var(--color-azul-galactico); /* Texto em popovers */
+  --primary: var(--color-dourado-estelar); /* Botões primários, elementos de destaque */
+  --primary-foreground: var(--color-azul-galactico); /* Texto em botões primários (para contraste) */
+  --secondary: var(--color-cinza-nuvens); /* Botões secundários, elementos de fundo sutis */
+  --secondary-foreground: var(--color-azul-galactico); /* Texto em botões secundários */
+  --muted: var(--color-rosa-nebulosa); /* Elementos muted, detalhes de fundo suaves */
+  --muted-foreground: var(--color-azul-galactico); /* Texto em elementos muted */
+  --accent: var(--color-dourado-estelar); /* Cor de destaque para elementos como hover/active */
+  --accent-foreground: var(--color-nevoa-lunar); /* Texto em elementos accent (se o accent for escuro) */
+  --destructive: #EF4444; /* Cor para ações destrutivas (pode manter padrão ou mapear uma sua) */
+  --destructive-foreground: #FFFFFF; /* Texto em ações destrutivas */
+  --border: var(--color-cinza-nuvens); /* Cor das bordas (cinza suave) */
+  --input: var(--color-cinza-nuvens); /* Cor dos campos de input */
+  --ring: var(--color-dourado-estelar); /* Cor do foco/anel de seleção */
+  /* Cores para gráficos - ajuste se tiver necessidade específica */
+  --chart-1: var(--color-dourado-estelar);
+  --chart-2: var(--color-azul-galactico);
+  --chart-3: var(--color-rosa-nebulosa);
+  --chart-4: var(--color-cinza-nuvens); /* Pode ser útil para um tom neutro em gráficos */
+  --chart-5: #FF7043; /* Exemplo de cor extra, se necessário */
+  /* Cores para sidebar (se for usada e precisar de um tema específico) */
+  --sidebar: var(--color-nevoa-lunar);
+  --sidebar-foreground: var(--color-azul-galactico);
+  --sidebar-primary: var(--color-dourado-estelar);
+  --sidebar-primary-foreground: var(--color-azul-galactico);
+  --sidebar-accent: var(--color-cinza-nuvens);
+  --sidebar-accent-foreground: var(--color-azul-galactico);
+  --sidebar-border: var(--color-cinza-nuvens);
+  --sidebar-ring: var(--color-dourado-estelar);
+}
+
+/* Tema ESCURO (se sua aplicação suporta modo escuro) */
+/* Aqui você faria o mapeamento inverso ou tons mais escuros das suas cores */
+.dark {
+  --background: var(--color-azul-galactico); /* Fundo principal escuro */
+  --foreground: var(--color-nevoa-lunar); /* Texto principal claro */
+  --card: var(--color-azul-galactico); /* Fundo dos cards no modo escuro */
+  --card-foreground: var(--color-nevoa-lunar); /* Texto nos cards no modo escuro */
+  --popover: var(--color-azul-galactico);
+  --popover-foreground: var(--color-nevoa-lunar);
+  --primary: var(--color-dourado-estelar); /* Botões primários no modo escuro */
+  --primary-foreground: var(--color-azul-galactico); /* Texto em botões primários no modo escuro */
+  --secondary: var(--color-rosa-nebulosa); /* Secundário pode ser o rosa claro */
+  --secondary-foreground: var(--color-azul-galactico);
+  --muted: var(--color-cinza-nuvens);
+  --muted-foreground: var(--color-nevoa-lunar);
+  --accent: var(--color-dourado-estelar);
+  --accent-foreground: var(--color-azul-galactico);
+  --destructive: #DC2626; /* Ajuste se necessário */
+  --destructive-foreground: #FFFFFF;
+  --border: var(--color-rosa-nebulosa); /* Bordas mais visíveis no escuro */
+  --input: var(--color-cinza-nuvens);
+  --ring: var(--color-dourado-estelar);
+  /* Ajuste as cores do gráfico para o modo escuro, se aplicável */
+  --chart-1: var(--color-dourado-estelar);
+  --chart-2: var(--color-rosa-nebulosa);
+  --chart-3: var(--color-cinza-nuvens);
+  --chart-4: var(--color-nevoa-lunar);
+  --chart-5: #FF9800;
+  /* Cores para sidebar (se for usada e precisar de um tema específico) */
+  --sidebar: var(--color-azul-galactico);
+  --sidebar-foreground: var(--color-nevoa-lunar);
+  --sidebar-primary: var(--color-dourado-estelar);
+  --sidebar-primary-foreground: var(--color-azul-galactico);
+  --sidebar-accent: var(--color-rosa-nebulosa);
+  --sidebar-accent-foreground: var(--color-azul-galactico);
+  --sidebar-border: var(--color-cinza-nuvens);
+  --sidebar-ring: var(--color-dourado-estelar);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/*:root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -80,7 +179,6 @@
 }
 
 .dark {
-  --nebulosaBg: #1A2B3D;
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -112,13 +210,4 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+} */
