@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type Stripe from 'stripe';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { ProductType } from '@/types/product-type';
+import type { ProductType } from '@/types/product/product-type';
 
 export function ProductCard({ product }: ProductType) {
   const price = product.default_price as Stripe.Price;

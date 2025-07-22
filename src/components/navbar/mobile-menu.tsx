@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useCallback, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import type { MobileMenuProps } from '@/types/navbar/mobile-menu-props';
+import type { MobileMenuProps } from '@/types/navbar/mobile-menu-type';
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   useEffect(() => {

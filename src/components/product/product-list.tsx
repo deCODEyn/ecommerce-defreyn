@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { ProductCard } from '@/components/product-card';
+import { ProductCard } from '@/components/product/product-card';
 import { Input } from '@/components/ui/input';
-import type { ProductsListType } from '@/types/products-list-type';
+import type { ProductsListType } from '@/types/product/products-list-type';
 
 export function ProductsList({ products }: ProductsListType) {
   const [searchTerm, setSearchTerm] = useState<string>('');

@@ -1,4 +1,4 @@
-import type { CartItem } from '@/types/cart-item-type';
+import type { CartItem } from '@/types/cart/cart-item-type';
 
 export interface CartStor {
   items: CartItem[];

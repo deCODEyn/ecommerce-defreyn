@@ -4,7 +4,7 @@ import Image from 'next/image';
 import type Stripe from 'stripe';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/store/cart-store';
-import type { ProductType } from '@/types/product-type';
+import type { ProductType } from '@/types/product/product-type';
 
 export default function ProductDetail({ product }: ProductType) {
   const { items, addItem, removeItem } = useCartStore();

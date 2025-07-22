@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/hooks/use-theme';
 import { useCartStore } from '@/store/cart-store';
-import type { NavbarActionProps } from '@/types/navbar/navbar-actions-props';
+import type { NavbarActionProps } from '@/types/navbar/navbar-actions-type';
 
 export function NavbarActions({
   onMobileMenuToggle,
