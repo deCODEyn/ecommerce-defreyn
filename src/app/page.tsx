@@ -11,7 +11,7 @@ export default async function Home() {
     'https://placehold.co/600x400/D8D9D7/1A2B3D?text=Produto+Destaque';
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <section className="mx-4 mt-8 max-w-7xl rounded-3xl border-2 border-border bg-card py-8 shadow-lg sm:py-12 md:mx-8 lg:mx-auto">
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-4 sm:px-8 md:grid-cols-2">
           <div className="max-w-md space-y-4 text-center md:text-left">
@@ -28,6 +28,7 @@ export default async function Home() {
               variant="default"
             >
               <Link
+                aria-label="Explorar todo o catálogo de produtos"
                 className="inline-flex items-center justify-center rounded-full px-6 py-3"
                 href="/products"
               >
@@ -49,12 +50,14 @@ export default async function Home() {
           )}
         </div>
       </section>
+
       <section className="mx-4 mt-12 max-w-7xl rounded-3xl bg-azul-galactico py-12 text-nevoa-lunar md:mx-8 lg:mx-auto">
         <h2 className="mb-8 text-center font-bold text-3xl text-primary">
           Produtos em Órbita
         </h2>
         <Carousel products={products.data} />
       </section>
+
       <section className="mx-4 mt-12 mb-8 max-w-7xl rounded-3xl bg-muted py-12 text-foreground shadow-inner md:mx-8 lg:mx-auto">
         <div className="container mx-auto px-4 text-center">
           <h3 className="mb-4 font-bold text-3xl text-primary">
@@ -69,7 +72,9 @@ export default async function Home() {
             className="mt-8 inline-flex items-center justify-center rounded-full px-8 py-3 shadow-md transition-all duration-300 hover:scale-105"
             variant="secondary"
           >
-            <Link href="/contact">Fale Conosco</Link>
+            <Link aria-label="Entre em contato conosco" href="/contact">
+              Fale Conosco
+            </Link>
           </Button>
         </div>
       </section>

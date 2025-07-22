@@ -8,11 +8,9 @@ export function useTheme() {
 
   const applyThemeToHtml = useCallback((currentTheme: Theme) => {
     const html = document.documentElement;
-    if (currentTheme === 'dark') {
-      html.classList.add('light');
-    } else {
-      html.classList.remove('dark');
-    }
+    currentTheme === 'light'
+      ? html.classList.add('dark')
+      : html.classList.remove('dark');
   }, []);
 
   useEffect(() => {
