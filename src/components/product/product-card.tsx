@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type Stripe from 'stripe';
-import { Button, Card, CardContent, CardHeader, CardTitle } from '@/components';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  PriceDisplay,
+} from '@/components';
 import type { ProductType } from '@/types';
 
 export function ProductCard({ product }: ProductType) {
@@ -37,11 +44,10 @@ export function ProductCard({ product }: ProductType) {
               {product.description}
             </p>
           )}
-          {price?.unit_amount && (
-            <p className="text-right font-bold text-lg text-secondary-foreground">
-              R${(price.unit_amount / 100).toFixed(2)}
-            </p>
-          )}
+          <PriceDisplay
+            className="text-right font-bold text-lg text-secondary-foreground"
+            price={price}
+          />
           <Button
             aria-label={`Ver detalhes de ${product.name}`}
             className="mt-4 w-full shadow-md transition-all duration-300 hover:scale-[1.02]"

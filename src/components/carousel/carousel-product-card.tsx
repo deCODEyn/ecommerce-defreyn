@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type Stripe from 'stripe';
-import { Card, CardContent, CardTitle } from '@/components';
+import { Card, CardContent, CardTitle, PriceDisplay } from '@/components';
 import type { ProductType } from '@/types';
 
 export function CarouselProductCard({ product }: ProductType) {
@@ -30,11 +30,7 @@ export function CarouselProductCard({ product }: ProductType) {
           <CardTitle className="mb-2 font-bold text-3xl text-primary">
             {product.name}
           </CardTitle>
-          {itemPrice?.unit_amount && (
-            <p className="text-foreground text-xl">
-              R${(itemPrice.unit_amount / 100).toFixed(2)}
-            </p>
-          )}
+          <PriceDisplay className="text-foreground text-xl" price={itemPrice} />
         </CardContent>
       </Card>
     </Link>

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
-import { Navbar } from '@/components';
+import { Navbar, Toaster } from '@/components';
 
 export const metadata: Metadata = {
   title: 'E-Commerce Estelar | Sua Loja de Produtos Únicos',
   description:
     'Descubra uma coleção exclusiva de produtos com design e qualidade que transcendem. Explore nosso universo de ofertas.',
-  // themeColor: '#F8F8F5',
-  // colorScheme: 'light dark',
+  colorScheme: 'light dark',
+  themeColor: '#1A2B3D',
 };
 
 export default function RootLayout({
@@ -22,6 +22,7 @@ export default function RootLayout({
         <main className="container mx-auto flex-grow px-4 py-8 pt-20 md:pt-24">
           {children}
         </main>
+        <Toaster />
       </body>
     </html>
   );
