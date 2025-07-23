@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import type Stripe from 'stripe';
 import { Button } from '@/components';
-import { useCartStore } from '@/store/cart-store';
+import { useCartStore } from '@/hooks';
 import type { ProductType } from '@/types';
 
 export function ProductDetail({ product }: ProductType) {

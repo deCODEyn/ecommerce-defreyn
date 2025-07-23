@@ -1,5 +1,5 @@
 import { ProductsList } from '@/components';
-import { getProductsList } from '@/lib/http/get-product-list';
+import { getProductsList } from '@/lib';
 
 export default async function Products() {
   const products = await getProductsList(false);

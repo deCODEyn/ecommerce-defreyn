@@ -32,6 +32,14 @@ export const useCartStore = create<CartStorInterface>()(
               .filter((item) => item.quantity > 0),
           };
         }),
+      incrementItemQuantityById: (id) =>
+        set((state) => {
+          return {
+            items: state.items.map((item) =>
+              item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+            ),
+          };
+        }),
       clearCart: () =>
         set(() => {
           return { items: [] };

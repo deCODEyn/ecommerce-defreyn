@@ -7,8 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/components';
-import { useTheme } from '@/hooks/use-theme';
-import { useCartStore } from '@/store/cart-store';
+import { useCartStore, useTheme } from '@/hooks';
 import type { NavbarActionInterface } from '@/types';
 
 export function NavbarActions({

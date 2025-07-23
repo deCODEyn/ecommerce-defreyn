@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ButtonLink, CarouselApp } from '@/components';
-import { getProductsList } from '@/lib/http/get-product-list';
+import { getProductsList } from '@/lib';
 
 export default async function Home() {
   const products = await getProductsList(true, 5);

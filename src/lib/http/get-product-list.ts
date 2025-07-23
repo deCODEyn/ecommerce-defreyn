@@ -1,5 +1,5 @@
 import type Stripe from 'stripe';
-import { stripe } from '@/lib/stripe';
+import { stripe } from '@/lib';
 
 export async function getProductsList(
   needLimit: boolean,
