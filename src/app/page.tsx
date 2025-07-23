@@ -1,5 +1,8 @@
-import Image from 'next/image';
-import { ButtonLink, CarouselApp } from '@/components';
+import {
+  CallToActionSection,
+  HeroSection,
+  ProductOrbitSection,
+} from '@/components';
 import { getProductsList } from '@/lib';
 
 export default async function Home() {
@@ -10,63 +13,11 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="mx-4 mt-8 max-w-7xl rounded-3xl border-2 border-border bg-card py-8 shadow-lg sm:py-12 md:mx-8 lg:mx-auto">
-        <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-4 sm:px-8 md:grid-cols-2">
-          <div className="max-w-md space-y-4 text-center md:text-left">
-            <h2 className="font-bold text-4xl text-primary tracking-tight md:text-5xl">
-              Bem-vindo ao Nosso Universo!
-            </h2>
-            <p className="text-foreground leading-relaxed opacity-90">
-              Desvende os produtos mais recentes e mergulhe em ofertas
-              estelares. Qualidade e inovação para sua jornada.
-            </p>
-            <ButtonLink
-              ariaLabel="Explorar todo o catálogo de produtos"
-              href="/products"
-              label="Explorar Catálogo"
-              variant="default"
-            />
-          </div>
-          {bannerImageUrl && (
-            <div className="relative h-96 w-full max-w-sm overflow-hidden rounded-lg md:max-w-md lg:h-[450px]">
-              <Image
-                alt="Imagem de destaque de um de nossos produtos exclusivos."
-                className="border-2 border-muted object-cover shadow-xl"
-                fill
-                priority
-                sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 400px"
-                src={bannerImageUrl}
-              />
-            </div>
-          )}
-        </div>
-      </section>
+      <HeroSection imageUrl={bannerImageUrl} />
 
-      <section className="mx-4 mt-12 max-w-7xl rounded-3xl bg-azul-galactico py-12 text-nevoa-lunar md:mx-8 lg:mx-auto">
-        <h2 className="mb-8 text-center font-bold text-3xl text-primary">
-          Produtos em Órbita
-        </h2>
-        <CarouselApp products={products.data} />
-      </section>
+      <ProductOrbitSection products={products.data} />
 
-      <section className="mx-4 mt-12 mb-8 max-w-7xl rounded-3xl bg-muted py-12 text-foreground shadow-inner md:mx-8 lg:mx-auto">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="mb-4 font-bold text-3xl text-primary">
-            Sua Jornada Começa Aqui
-          </h3>
-          <p className="mx-auto max-w-2xl text-foreground text-lg leading-relaxed">
-            Descubra a qualidade que transcende. Cada item, uma estrela em nossa
-            coleção.
-          </p>
-          <ButtonLink
-            ariaLabel="Entre em contato conosco"
-            className="mt-8 text-background"
-            href="/contact"
-            label="Fale Conosco"
-            variant="secondary"
-          />
-        </div>
-      </section>
+      <CallToActionSection />
     </div>
   );
 }
