@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: 'E-Commerce Estelar | Sua Loja de Produtos Únicos',
   description:
     'Descubra uma coleção exclusiva de produtos com design e qualidade que transcendem. Explore nosso universo de ofertas.',
-  colorScheme: 'light dark',
-  themeColor: '#1A2B3D',
 };
 export const viewport: Viewport = {
   themeColor: '#1A2B3D',

@@ -9,6 +9,7 @@ export * from '@/types/navbar/mobile-menu-interface';
 export * from '@/types/navbar/mobile-menu-links-interface';
 export * from '@/types/navbar/navbar-link-interface';
 export * from '@/types/product/price-display-type';
+export * from '@/types/product/product-image-type';
 export * from '@/types/product/product-type';
 export * from '@/types/product/products-list-type';
 export * from '@/types/product/quantity-selector-type';

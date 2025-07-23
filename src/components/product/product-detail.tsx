@@ -1,8 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import type Stripe from 'stripe';
-import { AddToCartButton, PriceDisplay, QuantitySelector } from '@/components';
+import {
+  AddToCartButton,
+  PriceDisplay,
+  ProductImage,
+  QuantitySelector,
+} from '@/components';
 import { useCartStore } from '@/hooks';
 import type { ProductType } from '@/types';
 
@@ -14,18 +18,11 @@ export function ProductDetail({ product }: ProductType) {
 
   return (
     <div className="container mx-auto flex flex-col items-center gap-8 rounded-lg border border-border bg-card px-4 py-8 shadow-xl md:flex-row">
-      {product.images?.[0] && (
-        <div className="relative h-96 w-full overflow-hidden rounded-lg sm:w-1/2 lg:h-180">
-          <Image
-            alt={product.name}
-            className="object-cover transition duration-300 hover:opacity-90"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-            src={product.images[0]}
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-      )}
+      <ProductImage
+        altText={product.name}
+        className="hover:opacity-75"
+        imageUrl={product.images?.[0]}
+      />
       <div className="flex flex-col items-center space-y-4 text-center md:w-1/2">
         <h1 className="font-bold text-4xl text-primary">{product.name}</h1>
         {product.description && (
