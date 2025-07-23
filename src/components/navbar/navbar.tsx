@@ -1,9 +1,9 @@
 'use client';
 
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useCallback, useEffect, useState } from 'react';
 import {
   MobileMenu,
+  MobileMenuButton,
   NavbarActions,
   NavbarDesktopLinks,
   NavbarLogo,
@@ -30,11 +30,8 @@ export function Navbar() {
       <div className="container mx-auto flex items-center justify-between p-4">
         <NavbarLogo />
         <NavbarDesktopLinks />
-        <NavbarActions
-          isMobileMenuOpen={mobileOpen}
-          MobileMenuIcon={mobileOpen ? XMarkIcon : Bars3Icon}
-          onMobileMenuToggle={toggleMobileMenu}
-        />
+        <NavbarActions />
+        <MobileMenuButton isOpen={mobileOpen} onToggle={toggleMobileMenu} />
       </div>
       <MobileMenu isOpen={mobileOpen} onClose={toggleMobileMenu} />
     </nav>

@@ -1,5 +1,5 @@
 import type Stripe from 'stripe';
-import { stripe } from '@/lib';
+import { stripe } from '@/lib/stripe';
 
 export async function getProductId(
   id: string

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import '@/app/globals.css';
 import { Navbar, Toaster } from '@/components';
 
@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     'Descubra uma coleção exclusiva de produtos com design e qualidade que transcendem. Explore nosso universo de ofertas.',
   colorScheme: 'light dark',
   themeColor: '#1A2B3D',
+};
+export const viewport: Viewport = {
+  themeColor: '#1A2B3D',
+  colorScheme: 'light dark',
 };
 
 export default function RootLayout({

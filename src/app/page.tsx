@@ -3,7 +3,7 @@ import {
   HeroSection,
   ProductOrbitSection,
 } from '@/components';
-import { getProductsList } from '@/lib';
+import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Home() {
   const products = await getProductsList(true, 5);

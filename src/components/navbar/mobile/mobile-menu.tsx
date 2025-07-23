@@ -2,7 +2,7 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useCallback, useEffect } from 'react';
-import { Button, NavbarLink } from '@/components';
+import { Button, MobileMenuLinks } from '@/components';
 import type { MobileMenuInterface } from '@/types';
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
@@ -28,7 +28,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
           onClick={onClose}
         />
       )}
-
       <nav
         aria-hidden={!isOpen}
         className={`fixed top-0 right-0 z-50 h-full w-64 transform bg-card text-foreground shadow-lg transition-transform duration-300 ease-in-out md:hidden ${
@@ -45,25 +44,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {
             <XMarkIcon className="h-6 w-6" />
           </Button>
         </div>
-        <ul className="flex flex-col space-y-2 p-4">
-          <li>
-            <NavbarLink href="/" label="Home" onClick={handleLinkClick} />
-          </li>
-          <li>
-            <NavbarLink
-              href="/products"
-              label="Produtos"
-              onClick={handleLinkClick}
-            />
-          </li>
-          <li>
-            <NavbarLink
-              href="/checkout"
-              label="Finalizar Compra"
-              onClick={handleLinkClick}
-            />
-          </li>
-        </ul>
+        <MobileMenuLinks onLinkClick={handleLinkClick} />
       </nav>
     </>
   );
