@@ -1,5 +1,7 @@
 export type ProductImageType = {
   imageUrl?: string;
   altText: string;
-  className?: string;
+  wrapperClassName: string;
+  imageClassName: string;
+  imageSizes: string;
 };

@@ -20,8 +20,10 @@ export function ProductDetail({ product }: ProductType) {
     <div className="container mx-auto flex flex-col items-center gap-8 rounded-lg border border-border bg-card px-4 py-8 shadow-xl md:flex-row">
       <ProductImage
         altText={product.name}
-        className="hover:opacity-75"
-        imageUrl={product.images?.[0]}
+        imageClassName="object-cover transition duration-300 hover:opacity-90"
+        imageSizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+        imageUrl={product.images[0]}
+        wrapperClassName="relative h-96 w-full overflow-hidden rounded-lg sm:w-1/2 lg:h-180"
       />
       <div className="flex flex-col items-center space-y-4 text-center md:w-1/2">
         <h1 className="font-bold text-4xl text-primary">{product.name}</h1>

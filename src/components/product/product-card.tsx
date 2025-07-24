@@ -23,8 +23,10 @@ export function ProductCard({ product }: ProductType) {
       <Card className="group flex h-[480px] flex-col gap-0 border-border bg-card py-0 transition duration-300 hover:shadow-xl sm:h-[520px] lg:h-[580px]">
         <ProductImage
           altText={product.name}
-          className="group-hover:opacity-75"
-          imageUrl={product.images?.[0]}
+          imageClassName="object-cover transition-opacity duration-300 group-hover:opacity-75"
+          imageSizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+          imageUrl={product.images[0]}
+          wrapperClassName="relative h-60 w-full overflow-hidden rounded-t-lg sm:h-72 lg:h-80"
         />
         <CardHeader className="h-[88px] flex-shrink-0 p-4">
           <CardTitle className="line-clamp-2 font-bold text-2xl text-primary">

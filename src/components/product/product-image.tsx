@@ -4,19 +4,21 @@ import type { ProductImageType } from '@/types';
 export function ProductImage({
   imageUrl,
   altText,
-  className,
+  wrapperClassName,
+  imageClassName,
+  imageSizes,
 }: ProductImageType) {
   if (!imageUrl) {
     return null;
   }
 
   return (
-    <div className="relative h-96 w-full overflow-hidden rounded-lg sm:w-1/2 lg:h-180">
+    <div className={wrapperClassName}>
       <Image
         alt={altText}
-        className={`object-cover transition-opacity duration-300 ${className || ''}`}
+        className={imageClassName}
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+        sizes={imageSizes}
         src={imageUrl}
         style={{ objectFit: 'cover' }}
       />
