@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import type Stripe from 'stripe';
+import { PriceDisplay, ProductImage } from '@/components/product';
 import {
   Button,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  PriceDisplay,
-  ProductImage,
-} from '@/components';
+} from '@/components/ui';
 import type { ProductType } from '@/types';
 
 export function ProductCard({ product }: ProductType) {

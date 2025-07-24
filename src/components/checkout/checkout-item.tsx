@@ -1,4 +1,6 @@
-import { Button, ProductImage, QuantitySelector } from '@/components';
+import { QuantitySelector } from '@/components/elements';
+import { ProductImage } from '@/components/product';
+import { Button } from '@/components/ui';
 import { useCartStore } from '@/hooks';
 import type { CheckoutItemType } from '@/types';
 

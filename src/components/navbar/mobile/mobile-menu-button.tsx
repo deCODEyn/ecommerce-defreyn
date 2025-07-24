@@ -1,5 +1,5 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Button } from '@/components';
+import { Button } from '@/components/ui';
 import type { MobileMenuButtonInterface } from '@/types';
 
 export function MobileMenuButton({

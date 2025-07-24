@@ -7,7 +7,7 @@ import {
   NavbarActions,
   NavbarDesktopLinks,
   NavbarLogo,
-} from '@/components';
+} from '@/components/navbar';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);

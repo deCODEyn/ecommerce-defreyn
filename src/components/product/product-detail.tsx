@@ -1,12 +1,9 @@
 'use client';
 
 import type Stripe from 'stripe';
-import {
-  AddToCartButton,
-  PriceDisplay,
-  ProductImage,
-  QuantitySelector,
-} from '@/components';
+import { AddToCartButton } from '@/components/cart';
+import { QuantitySelector } from '@/components/elements';
+import { PriceDisplay, ProductImage } from '@/components/product';
 import { useCartStore } from '@/hooks';
 import type { ProductType } from '@/types';
 

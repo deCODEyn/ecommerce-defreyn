@@ -1,19 +1,18 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { CarouselPagination, CarouselProductCard } from '@/components/carousel';
 import {
   Carousel,
   type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPagination,
   CarouselPrevious,
-  CarouselProductCard,
-} from '@/components';
+} from '@/components/ui';
 import type { ProductsListType } from '@/types';
 
-export function CarouselApp({ products }: ProductsListType) {
+export function CarouselHome({ products }: ProductsListType) {
   const [api, setApi] = useState<CarouselApi>();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [count, setCount] = useState(0);

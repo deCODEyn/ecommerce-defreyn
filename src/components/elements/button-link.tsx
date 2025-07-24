@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/components';
+import { Button } from '@/components/ui';
 import type { ButtonLinkType } from '@/types';
 
 export function ButtonLink({

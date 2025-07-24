@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Input, ProductCard } from '@/components';
+import { ProductCard } from '@/components/product';
+import { Input } from '@/components/ui';
 import type { ProductsListType } from '@/types';
 
 export function ProductsList({ products }: ProductsListType) {

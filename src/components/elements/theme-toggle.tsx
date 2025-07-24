@@ -1,8 +1,9 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
-import { Button } from '@/components';
+import { Button } from '@/components/ui';
 import { useTheme } from '@/hooks';
+import type { ThemeToggleType } from '@/types';
 
-export function ThemeToggle({ className }: { className?: string }) {
+export function ThemeToggle({ className }: ThemeToggleType) {
   const { theme, setTheme, mounted } = useTheme();
 
   if (!mounted) {

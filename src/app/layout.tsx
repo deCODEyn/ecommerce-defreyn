@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import '@/app/globals.css';
-import { Navbar, Toaster } from '@/components';
+import { Navbar } from '@/components/navbar';
+import { Toaster } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'E-Commerce Estelar | Sua Loja de Produtos Únicos',

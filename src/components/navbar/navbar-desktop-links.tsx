@@ -1,4 +1,4 @@
-import { NavbarLink } from '@/components';
+import { NavbarLink } from '@/components/navbar';
 import { mainNavLinks, type NavLinkItemType } from '@/lib/navigation';
 
 export function NavbarDesktopLinks() {

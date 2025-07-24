@@ -1,6 +1,7 @@
 'use client';
 
-import { CartIconButton, ThemeToggle } from '@/components';
+import { CartIconButton } from '@/components/cart';
+import { ThemeToggle } from '@/components/elements';
 
 export function NavbarActions() {
   return (

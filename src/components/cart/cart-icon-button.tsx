@@ -1,8 +1,9 @@
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useCartStore } from '@/hooks';
+import type { CartIconButtonType } from '@/types';
 
-export function CartIconButton({ className }: { className?: string }) {
+export function CartIconButton({ className }: CartIconButtonType) {
   const { items } = useCartStore();
   const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 

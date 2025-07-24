@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type Stripe from 'stripe';
-import { Card, CardContent, CardTitle, PriceDisplay } from '@/components';
+import { PriceDisplay } from '@/components/product';
+import { Card, CardContent, CardTitle } from '@/components/ui';
 import type { ProductType } from '@/types';
 
 export function CarouselProductCard({ product }: ProductType) {

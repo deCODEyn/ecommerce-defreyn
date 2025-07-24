@@ -1,4 +1,4 @@
-import { CarouselApp } from '@/components';
+import { CarouselHome } from '@/components/carousel';
 import type { ProductsListType } from '@/types';
 
 export function ProductOrbitSection({ products }: ProductsListType) {
@@ -7,7 +7,7 @@ export function ProductOrbitSection({ products }: ProductsListType) {
       <h2 className="mb-8 text-center font-bold text-3xl text-primary">
         Produtos em Órbita
       </h2>
-      <CarouselApp products={products} />
+      <CarouselHome products={products} />
     </section>
   );
 }

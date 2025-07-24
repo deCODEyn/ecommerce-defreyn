@@ -1,8 +1,13 @@
-import { ProductsList } from '@/components';
+import { redirect } from 'next/navigation';
+import { ProductsList } from '@/components/product';
 import { getProductsList } from '@/lib/http/get-product-list';
 
 export default async function Products() {
   const products = await getProductsList(false);
+
+  if (!products?.data?.length) {
+    redirect('/?error=no_products_available');
+  }
 
   return (
     <div className="bg-background pb-8 text-foreground">

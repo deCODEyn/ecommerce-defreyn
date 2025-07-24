@@ -1,4 +1,5 @@
-import { ButtonLink, HomeBannerImage } from '@/components';
+import { ButtonLink } from '@/components/elements';
+import { HomeBannerImage } from '@/components/home';
 import type { ImageUrlType } from '@/types';
 
 export function HeroSection({ imageUrl }: ImageUrlType) {

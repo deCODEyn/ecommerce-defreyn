@@ -2,7 +2,8 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useCallback, useEffect } from 'react';
-import { Button, MobileMenuLinks } from '@/components';
+import { MobileMenuLinks } from '@/components/navbar';
+import { Button } from '@/components/ui';
 import type { MobileMenuInterface } from '@/types';
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuInterface) {

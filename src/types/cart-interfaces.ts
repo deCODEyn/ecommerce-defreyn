@@ -9,15 +9,19 @@ export interface CartStorInterface {
   items: CartItemType[];
 }
 
+export type AddToCartButtonType = {
+  className?: string;
+  product: ProductType['product'];
+};
+
+export type CartIconButtonType = {
+  className?: string;
+};
+
 export type CartItemType = {
   id: string;
   imageUrl: string | null;
   name: string;
   price: number;
   quantity: number;
-};
-
-export type AddToCartButtonType = {
-  className?: string;
-  product: ProductType['product'];
 };
