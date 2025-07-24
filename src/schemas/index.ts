@@ -1,1 +1,1 @@
-export * from '@/schemas/product-add-schema';
+export * from '@/schemas/product-schema';

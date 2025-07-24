@@ -8,12 +8,13 @@ export function QuantitySelector({
   productName,
   productId,
   quantity,
+  className,
 }: QuantitySelectorType) {
-  const { incrementItemQuantityById } = useCartStore();
+  const { incrementItemById } = useCartStore();
   const { removeProductFromCart } = useAddToCart();
 
   function handleAddClick() {
-    incrementItemQuantityById(productId);
+    incrementItemById(productId);
   }
 
   function handleRemoveClick() {
@@ -21,7 +22,7 @@ export function QuantitySelector({
   }
 
   return (
-    <div className="flex items-center justify-center space-x-4 pt-4">
+    <div className={`flex items-center ${className || ''}`}>
       <Button
         aria-label={`Remover uma unidade de ${productName} do carrinho`}
         className="size-10 border-border text-secondary-foreground text-xl transition-colors hover:bg-secondary/80"

@@ -9,7 +9,6 @@ export const useCartStore = create<CartStorInterface>()(
       addItem: (item) =>
         set((state) => {
           const existing = state.items.find((i) => i.id === item.id);
-
           if (existing) {
             return {
               items: state.items.map((i) =>
@@ -19,7 +18,6 @@ export const useCartStore = create<CartStorInterface>()(
               ),
             };
           }
-
           return { items: [...state.items, item] };
         }),
       removeItem: (id) =>
@@ -32,12 +30,18 @@ export const useCartStore = create<CartStorInterface>()(
               .filter((item) => item.quantity > 0),
           };
         }),
-      incrementItemQuantityById: (id) =>
+      incrementItemById: (id) =>
         set((state) => {
           return {
             items: state.items.map((item) =>
               item.id === id ? { ...item, quantity: item.quantity + 1 } : item
             ),
+          };
+        }),
+      removeProduct: (id) =>
+        set((state) => {
+          return {
+            items: state.items.filter((item) => item.id !== id),
           };
         }),
       clearCart: () =>

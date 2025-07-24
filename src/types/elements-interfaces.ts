@@ -3,8 +3,12 @@ import type { Button } from '@/components';
 
 export interface ButtonLinkType
   extends ComponentPropsWithoutRef<typeof Button> {
-  href: string;
-  label: string;
   ariaLabel: string;
   className?: string;
+  href: string;
+  label: string;
 }
+
+export type ImageUrlType = {
+  imageUrl: string;
+};

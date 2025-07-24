@@ -40,6 +40,7 @@ export function ProductDetail({ product }: ProductType) {
           <AddToCartButton className="mt-6" product={product} />
         ) : (
           <QuantitySelector
+            className="justify-center space-x-4 pt-4"
             productId={product.id}
             productName={product.name}
             quantity={quantity}

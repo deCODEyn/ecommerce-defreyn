@@ -2,6 +2,7 @@ import z from 'zod';
 
 const envSchema = z.object({
   STRIPE_SECRET_KEY: z.string(),
+  NEXT_PUBLIC_BASE_URL: z.string(),
 });
 
 export const env = envSchema.parse(process?.env);
