@@ -11,6 +11,7 @@ export interface ButtonLinkType
 
 export type ImageUrlType = {
   imageUrl: string;
+  altText?: string;
 };
 
 export type ThemeToggleType = {

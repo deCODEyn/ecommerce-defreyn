@@ -14,24 +14,26 @@ export function CarouselProductCard({ product }: ProductType) {
       className="block h-full w-full"
       href={`/products/${product.id}`}
     >
-      <Card className="relative overflow-hidden rounded-lg border-border shadow-md">
+      <Card className="overflow-hidden rounded-lg border-border shadow-md">
         {product.images?.[0] && (
           <div className="relative h-120 w-full lg:h-180">
             <Image
               alt={product.name}
               className="object-cover transition-opacity duration-500 ease-in-out"
               fill
-              sizes="100vw"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, (max-width: 1280px) 30vw, 420px"
               src={product.images[0]}
-              style={{ objectFit: 'cover' }}
             />
           </div>
         )}
-        <CardContent className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-card-foreground">
-          <CardTitle className="mb-2 font-bold text-3xl text-primary">
+        <CardContent className="inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-card-foreground">
+          <CardTitle className="mb-2 font-bold text-2xl text-primary">
             {product.name}
           </CardTitle>
-          <PriceDisplay className="text-foreground text-xl" price={itemPrice} />
+          <PriceDisplay
+            className="mb-2 font-semibold text-foreground text-lg"
+            price={itemPrice}
+          />
         </CardContent>
       </Card>
     </Link>

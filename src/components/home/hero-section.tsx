@@ -21,7 +21,7 @@ export function HeroSection({ imageUrl }: ImageUrlType) {
             variant="default"
           />
         </div>
-        <HomeBannerImage imageUrl={imageUrl} />{' '}
+        <HomeBannerImage imageUrl={imageUrl} />
       </div>
     </section>
   );
