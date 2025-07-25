@@ -1,3 +1,5 @@
+'use server';
+
 import type Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { logError } from '@/utils/logger';

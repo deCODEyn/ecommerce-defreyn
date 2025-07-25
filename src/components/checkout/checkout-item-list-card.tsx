@@ -6,7 +6,7 @@ export function CheckoutItemListCard({ items, total }: CheckoutItemCardType) {
   return (
     <Card className="mb-6 border-border bg-card">
       <CardHeader>
-        <CardTitle className="font-bold text-2xl text-primary-foreground">
+        <CardTitle className="font-bold text-2xl text-foreground">
           Seu Pedido
         </CardTitle>
       </CardHeader>

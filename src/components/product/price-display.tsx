@@ -1,4 +1,5 @@
 import type { PriceDisplayType } from '@/types';
+import { formatCurrency } from '@/utils/currency';
 import { logError } from '@/utils/logger';
 
 export function PriceDisplay({ price, className }: PriceDisplayType) {
@@ -7,12 +8,7 @@ export function PriceDisplay({ price, className }: PriceDisplayType) {
   }
 
   try {
-    const formattedPrice = new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: price.currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(price.unit_amount / 100);
+    const formattedPrice = formatCurrency(price.unit_amount);
     return <p className={className}>{formattedPrice}</p>;
   } catch (error) {
     logError('Erro ao formatar preço:', error);

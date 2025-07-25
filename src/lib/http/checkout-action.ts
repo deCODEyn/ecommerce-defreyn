@@ -7,9 +7,7 @@ import type { CartItemType } from '@/types';
 import { env } from '@/utils/env';
 import { logError } from '@/utils/logger';
 
-export async function checkoutAction(formData: FormData): Promise<void> {
-  const itemsJson = formData.get('items') as string;
-  const items = JSON.parse(itemsJson);
+export async function checkoutAction(items: CartItemType[]): Promise<void> {
   const line_items = items.map((item: CartItemType) => ({
     price_data: {
       currency: 'brl',

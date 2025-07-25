@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { CarouselPagination, CarouselProductCard } from '@/components/carousel';
+import { CarouselPagination } from '@/components/carousel';
+import { CardProduct } from '@/components/product';
 import {
   Carousel,
   type CarouselApi,
@@ -71,7 +72,20 @@ export function CarouselHome({ products }: ProductsListType) {
           {products.map((product) => {
             return (
               <CarouselItem key={product.id}>
-                <CarouselProductCard product={product} />
+                <CardProduct
+                  cardClass="h-full items-center overflow-hidden rounded-lg shadow-md"
+                  cardContentClass="font-bold text-2xl text-primary"
+                  cardHeaderClass="-mb-8 w-full justify-center"
+                  cardTitleClass="mb-2"
+                  imageSizes="(max-width: 768px) 90vw, 1280px"
+                  imageWrapperClass="h-100 w-150 lg:h-160"
+                  linkClass="w-full"
+                  priceDisplayClass="mb-2 font-semibold text-foreground"
+                  product={product}
+                  productImageClass="duration-500 ease-in-out"
+                  showDescription={false}
+                  showDetailsButton={false}
+                />
               </CarouselItem>
             );
           })}

@@ -1,11 +1,13 @@
 import { redirect } from 'next/navigation';
 import { ProductsList } from '@/components/product';
 import { getProductsList } from '@/lib/http/get-product-list';
+import { logError } from '@/utils/logger';
 
 export default async function Products() {
   const products = await getProductsList(false);
 
   if (!products?.data?.length) {
+    logError('Erro ao buscar produtos na página Produtct');
     redirect('/?error=no_products_available');
   }
 

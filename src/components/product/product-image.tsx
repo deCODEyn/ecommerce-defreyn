@@ -9,7 +9,13 @@ export function ProductImage({
   imageSizes,
 }: ProductImageType) {
   if (!imageUrl) {
-    return null;
+    return (
+      <div
+        className={`${wrapperClassName} flex h-full w-full items-center justify-center bg-muted text-center text-muted-foreground text-xs`}
+      >
+        Sem Imagem
+      </div>
+    );
   }
 
   return (

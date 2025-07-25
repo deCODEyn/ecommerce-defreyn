@@ -18,6 +18,12 @@ export type CartIconButtonType = {
   className?: string;
 };
 
+export type CartItemActionType = {
+  itemId: string;
+  itemName: string;
+  itemQuantity: number;
+};
+
 export type CartItemType = {
   id: string;
   imageUrl: string | null;

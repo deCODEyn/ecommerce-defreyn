@@ -12,3 +12,9 @@ export type CheckoutItemCardType = {
 export type CheckoutItemType = {
   item: CartItemType;
 };
+
+export type CheckoutPriceSummaryType = {
+  subtotal: number;
+  shippingCost: number;
+  finalTotal: number;
+};
