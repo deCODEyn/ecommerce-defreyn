@@ -23,7 +23,6 @@ export function CarouselHome({ products }: ProductsListType) {
         api.scrollNext();
       }
     }, 3000);
-
     return () => clearInterval(interval);
   }, [api]);
 

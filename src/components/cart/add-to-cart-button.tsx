@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@/components/ui';
 import { useAddToCart } from '@/hooks';
 import type { AddToCartButtonType } from '@/types';

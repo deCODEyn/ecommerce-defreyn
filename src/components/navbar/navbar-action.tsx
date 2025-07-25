@@ -1,5 +1,3 @@
-'use client';
-
 import { CartIconButton } from '@/components/cart';
 import { ThemeToggle } from '@/components/elements';
 

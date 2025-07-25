@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@/components/ui';
 import { useAddToCart, useCartStore } from '@/hooks';
 import type { QuantitySelectorType } from '@/types';

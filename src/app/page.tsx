@@ -10,13 +10,13 @@ export default async function Home() {
     products?.data?.[0]?.images?.[0] ||
     'https://placehold.co/600x400/D8D9D7/1A2B3D?text=Produto+Destaque';
 
-  return hasLoadingError ? (
-    <HomeLayout bannerImageUrl={bannerImageUrl}>
-      <ProductOrbitSection products={products.data} />
-    </HomeLayout>
+  const dynamicContent = hasLoadingError ? (
+    <ProductOrbitSection products={products.data} />
   ) : (
-    <HomeLayout bannerImageUrl={bannerImageUrl}>
-      <HomeErrorProducts />
-    </HomeLayout>
+    <HomeErrorProducts />
+  );
+
+  return (
+    <HomeLayout bannerImageUrl={bannerImageUrl}>{dynamicContent}</HomeLayout>
   );
 }
